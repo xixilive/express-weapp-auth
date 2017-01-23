@@ -1,5 +1,7 @@
 # Express-weapp-auth
 
+[![Build Status](https://travis-ci.org/xixilive/express-weapp-auth.svg?branch=master)](https://travis-ci.org/xixilive/express-weapp-auth)
+
 Express middleware to decrypt wechat userInfo data for weapp login scenario.
 
 ## Installation
