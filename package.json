@@ -1,0 +1,61 @@
+{
+  "name": "express-weapp-auth",
+  "version": "0.1.0",
+  "description": "weapp auth middleware for framework likes ExpressJs",
+  "main": "dist/index.js",
+  "scripts": {
+    "pretest": "eslint es6",
+    "test": "jest --coverage",
+    "build": "npm test && rimraf dist/* && babel --copy-files ./es6 -d ./dist",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xixilive/express-weapp-auth.git"
+  },
+  "keywords": [
+    "weixin",
+    "wechat",
+    "weapp",
+    "authentication",
+    "express",
+    "middleware"
+  ],
+  "author": "xixilive@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xixilive/express-weapp-auth/issues"
+  },
+  "homepage": "https://github.com/xixilive/express-weapp-auth#readme",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint": "^3.14.0",
+    "jest-cli": "^18.1.0",
+    "rimraf": "^2.5.4"
+  },
+  "jest": {
+    "automock": false,
+    "bail": false,
+    "transform": {
+      ".js": "<rootDir>/node_modules/babel-jest"
+    },
+    "testPathDirs": [
+      "<rootDir>/__tests__/"
+    ],
+    "unmockedModulePathPatterns": [
+      "/node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testRegex": [
+      ".test.js$"
+    ]
+  }
+}
