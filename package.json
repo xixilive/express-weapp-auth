@@ -1,7 +1,7 @@
 {
   "name": "express-weapp-auth",
   "version": "0.1.0",
-  "description": "weapp auth middleware for framework likes ExpressJs",
+  "description": "Express middleware to decrypt wechat userInfo data for weapp(微信小程序) login scenario.",
   "main": "dist/index.js",
   "scripts": {
     "pretest": "eslint es6",
@@ -19,7 +19,8 @@
     "weapp",
     "authentication",
     "express",
-    "middleware"
+    "middleware",
+    "微信小程序"
   ],
   "author": "xixilive@gmail.com",
   "license": "MIT",
