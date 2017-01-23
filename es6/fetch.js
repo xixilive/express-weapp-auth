@@ -1,5 +1,6 @@
-import {https} from 'https'
 import httpError from './error'
+
+const https = require('https')
 
 const get = (url) => {
   return new Promise((resolve, reject) => {

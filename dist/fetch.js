@@ -5,17 +5,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = fetchUrl;
 
-var _https = require('https');
-
 var _error = require('./error');
 
 var _error2 = _interopRequireDefault(_error);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var https = require('https');
+
 var get = function get(url) {
   return new Promise(function (resolve, reject) {
-    _https.https.get(url, function (res) {
+    https.get(url, function (res) {
       var statusCode = res.statusCode;
 
       if (statusCode < 200 || statusCode >= 300) {
