@@ -1,5 +1,7 @@
 # Express-weapp-auth
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/xixilive/express-weapp-auth.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/xixilive/express-weapp-auth.svg?branch=master)](https://travis-ci.org/xixilive/express-weapp-auth)
 
 Express middleware to decrypt wechat userInfo data for weapp login scenario.
