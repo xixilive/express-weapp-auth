@@ -18,13 +18,13 @@ npm install express-weapp-auth --save
 
 ```js
 // basic example
-import weappAuthMiddleware from 'express-weapp-auth'
+import {middleware} from 'express-weapp-auth'
 
 const app = require('express')()
 app.post(
   '/session/:code',
 
-  weappAuthMiddleware('appId', 'appSecret'),
+  middleware('appId', 'appSecret'),
 
   (req, res, next) => {
     const {openId, sessionKey, userInfo} = req.weappAuth
@@ -36,7 +36,7 @@ app.post(
 app.use(
   '/weapp/session/',
 
-  weappAuthMiddleware('appId', 'appSecret', (req) => {
+  middleware('appId', 'appSecret', (req) => {
     return req.body
   }, {dataKey: 'customDataKey'}),
   (req, res, next) => {
@@ -50,16 +50,16 @@ app.use(
 
 ```js
 // all arguments
-weappAuthMiddleware('appId', 'appSecret' [, paramsResolver, options])
+middleware('appId', 'appSecret' [, paramsResolver, options])
 
 // without optional arguments
-weappAuthMiddleware('appId', 'appSecret')
+middleware('appId', 'appSecret')
 
 // without options argument
-weappAuthMiddleware('appId', 'appSecret' paramsResolver)
+middleware('appId', 'appSecret' paramsResolver)
 
 // without paramsResolver argument
-weappAuthMiddleware('appId', 'appSecret' options)
+middleware('appId', 'appSecret' options)
 ```
 
 ### Arguments

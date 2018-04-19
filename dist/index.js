@@ -6,33 +6,29 @@ Object.defineProperty(exports, "__esModule", {
 
 var _decipherer = require('./decipherer');
 
-var _decipherer2 = _interopRequireDefault(_decipherer);
+Object.defineProperty(exports, 'decipherer', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_decipherer).default;
+  }
+});
 
 var _params = require('./params');
 
-var _params2 = _interopRequireDefault(_params);
+Object.defineProperty(exports, 'resolveParams', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_params).default;
+  }
+});
+
+var _middleware = require('./middleware');
+
+Object.defineProperty(exports, 'middleware', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_middleware).default;
+  }
+});
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var middleware = function middleware(appId, appSecret, paramsResolver) {
-  var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-
-  if ('[object Object]' !== Object.prototype.toString.call(paramsResolver)) {
-    options = paramsResolver;
-    paramsResolver = null;
-  }
-
-  var _ref = options || {},
-      _ref$dataKey = _ref.dataKey,
-      dataKey = _ref$dataKey === undefined ? 'weappAuth' : _ref$dataKey;
-
-  return function (req, res, next) {
-    return (0, _params2.default)(req, paramsResolver).then((0, _decipherer2.default)(appId, appSecret)).then(function (data) {
-      req[dataKey] = data;
-      next();
-    }).catch(next);
-  };
-};
-
-exports.default = middleware;
-module.exports = exports['default'];

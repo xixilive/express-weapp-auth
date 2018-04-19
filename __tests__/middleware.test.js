@@ -5,7 +5,7 @@ jest.mock('../es6/fetch', () => {
   }))
 })
 
-const Middleware = require('../es6')
+const Middleware = require('../es6').middleware
 const mockdata = require('./mockdata')
 const mockNext = jest.fn()
 
